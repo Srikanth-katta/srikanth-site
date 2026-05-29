@@ -369,5 +369,5 @@ export const gallery: GalleryImage[] = [
 /* -------------------- Footer / Colophon -------------------- */
 
 export const colophon = {
-  builtWith: "Next.js, React, Three.js, Framer Motion, Lenis, Tailwind CSS.",
+  builtWith: "Next.js, React, Framer Motion, Lenis, Tailwind CSS.",
 };
