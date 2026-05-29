@@ -203,7 +203,7 @@ function Panel({
         </div>
 
         {/* RIGHT — editorial content */}
-        <div className="flex flex-1 flex-col justify-center gap-6 px-10 pt-24 pb-6 md:px-14 md:pt-0 md:pb-0 md:pr-16">
+        <div className="flex flex-1 flex-col justify-center gap-4 px-6 pt-20 pb-4 sm:gap-5 sm:px-10 md:gap-6 md:px-14 md:pt-0 md:pb-0 md:pr-16">
 
           {/* Eyebrow + title */}
           <div>
@@ -319,102 +319,6 @@ function Panel({
 }
 
 /* ──────────────────────────────────────────────────────────────────────────────
-   MOBILE PANEL — natural stacked layout (no scroll-hijack, no cursor, no clipping)
-   ────────────────────────────────────────────────────────────────────────────── */
-function MobilePanel({ card }: { card: (typeof afterHours)[number] }) {
-  const p = PALETTE[card.kind];
-  const words = VOCAB[card.kind];
-  return (
-    <section className="relative overflow-hidden" style={{ background: p.bg }}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={`/images/after-hours/${card.kind}.png`}
-        alt=""
-        aria-hidden
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-25"
-      />
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{ background: `linear-gradient(to bottom, ${p.bg}d9, ${p.bg}f2)` }}
-      />
-      <div className="relative z-10 flex flex-col gap-5 px-6 py-16">
-        <p
-          className="flex items-center gap-3 font-mono text-[9px] uppercase tracking-[0.3em]"
-          style={{ color: p.accent }}
-        >
-          <span className="block h-px w-5" style={{ background: p.accent }} />
-          {p.label}
-        </p>
-        <h3
-          style={{
-            fontFamily: "var(--font-display)",
-            fontWeight: 300,
-            fontStyle: "italic",
-            fontSize: "clamp(28px, 8vw, 40px)",
-            color: p.ink,
-            letterSpacing: "-0.02em",
-            lineHeight: 1.1,
-          }}
-        >
-          {card.title}
-        </h3>
-        <p className="leading-relaxed" style={{ fontSize: 14, color: p.muted }}>
-          {card.body}
-        </p>
-        <div className="flex flex-wrap gap-x-4 gap-y-2 font-mono text-[10px] uppercase tracking-[0.18em]">
-          {words.slice(0, 6).map((entry) => (
-            <span key={entry.w} style={{ color: p.ink }}>
-              {entry.w}
-              <span style={{ color: p.accent }}> · {entry.t}</span>
-            </span>
-          ))}
-        </div>
-        {(card.frequency || card.currentFocus) && (
-          <div className="flex flex-wrap gap-2">
-            {card.frequency && (
-              <span
-                className="rounded-full font-mono text-[9px] uppercase tracking-[0.16em]"
-                style={{
-                  padding: "4px 14px 5px",
-                  background: `${p.accent}14`,
-                  color: `${p.accent}a0`,
-                  border: `1px solid ${p.accent}28`,
-                }}
-              >
-                {card.frequency}
-              </span>
-            )}
-            {card.currentFocus && (
-              <span
-                className="rounded-full font-mono text-[9px] uppercase tracking-[0.16em]"
-                style={{
-                  padding: "4px 14px 5px",
-                  color: `${p.ink}40`,
-                  border: "1px solid rgba(255,255,255,0.08)",
-                }}
-              >
-                {card.currentFocus}
-              </span>
-            )}
-          </div>
-        )}
-        <div className="border-t pt-4" style={{ borderColor: "rgba(255,255,255,0.07)" }}>
-          <p
-            className="mb-1.5 font-mono text-[8px] uppercase tracking-[0.28em]"
-            style={{ color: `${p.ink}30` }}
-          >
-            carries into work
-          </p>
-          <p className="leading-relaxed" style={{ fontSize: 13, color: `${p.ink}55` }}>
-            {card.transfer}
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ──────────────────────────────────────────────────────────────────────────────
    MAIN COMPONENT
    ────────────────────────────────────────────────────────────────────────────── */
 export function AfterHours() {
@@ -455,21 +359,13 @@ export function AfterHours() {
   const p          = PALETTE[activeCard.kind];
 
   return (
-    <section id="after-hours" className="relative">
-      {/* Mobile: simple stacked panels — scroll naturally, nothing clipped */}
-      <div className="md:hidden">
-        {afterHours.map((card) => (
-          <MobilePanel key={card.slug} card={card} />
-        ))}
-      </div>
-
-      {/* Desktop: sticky scroll-driven crossfade with cursor reveal */}
-      <div
-        ref={sectionRef}
-        className="relative hidden md:block"
-        style={{ height: `${total * 100}vh` }}
-      >
-        <div className="sticky top-0 h-screen w-full overflow-hidden">
+    <div
+      id="after-hours"
+      ref={sectionRef}
+      className="relative"
+      style={{ height: `${total * 100}vh` }}
+    >
+      <div className="sticky top-0 h-screen w-full overflow-hidden">
 
         {/* ── Full-screen panels — crossfade ── */}
         <AnimatePresence mode="wait">
@@ -540,8 +436,7 @@ export function AfterHours() {
           </div>
         </div>
 
-        </div>
       </div>
-    </section>
+    </div>
   );
 }

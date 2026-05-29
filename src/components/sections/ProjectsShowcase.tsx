@@ -69,7 +69,7 @@ function ProjectCard({
   className?: string;
   featured?: boolean;
 }) {
-  const aspect = featured ? "aspect-[3/4] sm:aspect-[16/10]" : "aspect-[4/5]";
+  const aspect = featured ? "aspect-[16/10]" : "aspect-[4/5]";
   return (
     <motion.article
       initial={{ opacity: 0, y: 28 }}
