@@ -69,7 +69,7 @@ function ProjectCard({
   className?: string;
   featured?: boolean;
 }) {
-  const aspect = featured ? "aspect-[16/10]" : "aspect-[4/5]";
+  const aspect = featured ? "aspect-[3/4] sm:aspect-[16/10]" : "aspect-[4/5]";
   return (
     <motion.article
       initial={{ opacity: 0, y: 28 }}
@@ -128,12 +128,12 @@ function ProjectCard({
           </div>
 
           {/* Bottom gradient + editorial title + hover description */}
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-[var(--color-ink)] via-[var(--color-ink)]/85 to-transparent px-5 pb-6 pt-20">
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-[var(--color-ink)] via-[var(--color-ink)]/85 to-transparent px-5 pb-6 pt-12 md:pt-20">
             <h3 className="font-display text-[clamp(1.5rem,2.6vw,2.6rem)] leading-[1.05] text-[var(--color-bone)] transition-colors duration-300 group-hover:text-[var(--color-spark)]">
               {project.editorialTitle}
             </h3>
             {/* Description fades in on hover */}
-            <p className="mt-2 max-w-md translate-y-1 text-sm leading-relaxed text-[var(--color-bone)]/75 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+            <p className="mt-2 hidden max-w-md translate-y-1 text-sm leading-relaxed text-[var(--color-bone)]/75 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 md:block">
               {project.blurb}
             </p>
           </div>
