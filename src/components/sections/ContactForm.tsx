@@ -15,7 +15,7 @@ import { motion } from "framer-motion";
  *      NEXT_PUBLIC_FORMSPREE_ENDPOINT, then redeploy.
  */
 const ENDPOINT =
-  process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT ?? "https://formspree.io/f/YOUR_FORM_ID";
+  process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT ?? "https://formspree.io/f/xnjrwybz";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
