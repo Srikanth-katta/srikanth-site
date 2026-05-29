@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #050608;
+  --color-graphite: #0c0f14;
+  --color-slate: #1a1f29;
+  --color-fog: #6b7280;
+  --color-bone: #e8eaee;
+  --color-paper: #f4f5f7;
+  --color-ice: #7fd8ff;
+  --color-ice-dim: #4ba3c7;
+  --color-ice-deep: #0d2a3a;
+  --color-spark: #ff6b1a;
+  --color-spark-dim: #b34a0e;
+
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    background-color: var(--color-ink);
+    color: var(--color-bone);
+    scroll-behavior: auto; /* Lenis handles smooth */
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-bone);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    overflow-x: hidden;
+  }
+
+  /* Custom cursor: hide default on desktop, keep on touch */
+  @media (hover: hover) and (pointer: fine) {
+    html, body, * { cursor: none !important; }
+    /* …but form fields still need a visible text caret */
+    input, textarea { cursor: text !important; }
+  }
+
+  ::selection {
+    background: var(--color-ice);
+    color: var(--color-ink);
+  }
+
+  /* Hide native scrollbar on horizontal scroll containers */
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+/* Low-poly gallery (imported globally so the components can reference the
+   classes directly without CSS module class-mangling). */
+.lp-figure {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+.lp-svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 2;
+  overflow: visible;
+}
+.lp-glow {
+  position: absolute;
+  inset: 8% 8% 16% 8%;
+  border-radius: 50%;
+  filter: blur(38px);
+  opacity: 0.55;
+  z-index: 1;
+  transition: opacity 600ms ease, transform 600ms ease;
+  pointer-events: none;
+}
+.lp-figure:hover .lp-glow {
+  opacity: 0.85;
+  transform: scale(1.06);
+}
+.lp-glow-ice    { background: radial-gradient(circle, rgba(140,200,255,0.55), transparent 70%); }
+.lp-glow-amber  { background: radial-gradient(circle, rgba(255,170,40,0.55),  transparent 70%); }
+.lp-glow-gold   { background: radial-gradient(circle, rgba(220,170,60,0.55),  transparent 70%); }
+.lp-glow-warm   { background: radial-gradient(circle, rgba(220,90,40,0.55),   transparent 70%); }
+.lp-glow-lime   { background: radial-gradient(circle, rgba(120,255,160,0.5),  transparent 70%); }
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-figure { cursor: default; }
+  .lp-glow { transition: none !important; }
+}
+
+@layer components {
+  .container-edge {
+    @apply mx-auto w-full max-w-[1440px] px-6 md:px-12 lg:px-20;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-fog);
+  }
+
+  .contact-input {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-bone) 18%, transparent);
+    padding: 0.65rem 0 0.7rem;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--color-bone);
+    transition: border-color 300ms ease;
+    outline: none;
+  }
+  .contact-input::placeholder { color: color-mix(in srgb, var(--color-fog) 80%, transparent); }
+  .contact-input:focus { border-bottom-color: var(--color-spark); }
+
+  .display {
+    font-family: var(--font-display);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+  }
+
+  .grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.65'/></svg>");
+  }
+
+  .vignette::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, transparent 30%, rgba(5,6,8,0.55) 75%, rgba(5,6,8,0.95) 100%);
+  }
+
+  .reveal-mask {
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 1200ms cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  .reveal-mask.is-revealed { clip-path: inset(0 0 0 0); }
+}
+
+/* Lenis */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: clip; }
+
+/* Hide cursor on touch */
+@media (hover: none), (pointer: coarse) {
+  .cursor-shell { display: none !important; }
+}

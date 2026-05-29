@@ -1,0 +1,68 @@
+/* Panel-scoped variant: position is absolute (not fixed) so the effect
+   lives inside its parent — the swimming After Hours panel only. */
+
+.swimmerReveal {
+  position: absolute;
+  inset: 0;
+  isolation: isolate;
+  overflow: hidden;
+  background: #031014;
+  color: #12110f;
+}
+
+.swimmerReveal__scene,
+.swimmerReveal__grain,
+.swimmerReveal__veil {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.swimmerReveal__scene {
+  z-index: 0;
+  background: #031014;
+}
+
+.swimmerReveal__canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.swimmerReveal__grain {
+  z-index: 1;
+  opacity: 0.11;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.44'/%3E%3C/svg%3E");
+}
+
+.swimmerReveal__veil {
+  z-index: 2;
+  display: block;
+  transition: opacity 450ms ease;
+}
+
+.swimmerReveal.is-pointer-active .swimmerReveal__veil {
+  opacity: 0.98;
+}
+
+.swimmerReveal__content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 760px) {
+  .swimmerReveal__veil {
+    opacity: 0.94;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .swimmerReveal__veil {
+    transition: none;
+  }
+}

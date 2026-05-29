@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc" shape-rendering="geometricPrecision">
+  <title id="title">Low-poly martini glass</title>
+  <desc id="desc">A clean website-ready low-poly SVG martini glass built from flat polygon shapes. Transparent background with no shadows, gradients, filters, or background extras.</desc>
+
+  <style>
+.piece {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: assemble var(--dur,1.15s) cubic-bezier(0.22, 1, 0.36, 1) var(--delay,0s) forwards;
+  will-change: transform, opacity;
+}
+@keyframes assemble {
+  0% {
+    opacity: 0;
+    transform: translate(var(--dx, 0px), var(--dy, 0px)) rotate(var(--rot, 0deg)) scale(var(--scale, 1));
+  }
+  58% {
+    opacity: 1;
+  }
+  82% {
+    opacity: 1;
+    transform: translate(calc(var(--dx, 0px) * -0.045), calc(var(--dy, 0px) * -0.045)) rotate(calc(var(--rot, 0deg) * -0.04)) scale(1.015);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+}
+</style><g id="martini-glass" fill-rule="evenodd">
+    
+    <polygon points="156,260 868,260 710,512 512,606 314,512" fill="#7fb7d6" opacity="0.42" class="piece" style="--dx:-221px;--dy:83px;--rot:55deg;--scale:1.02;--delay:0.209s;--dur:1.431s;" />
+    <polygon points="156,260 314,512 420,520 318,332" fill="#b7d7eb" opacity="0.55" class="piece" style="--dx:268px;--dy:27px;--rot:-39deg;--scale:0.871;--delay:0.942s;--dur:0.982s;" />
+    <polygon points="868,260 710,512 604,520 706,332" fill="#5d99bd" opacity="0.42" class="piece" style="--dx:-175px;--dy:-200px;--rot:60deg;--scale:0.982;--delay:0.35s;--dur:1.15s;" />
+    <polygon points="318,332 512,606 420,520" fill="#9ac7df" opacity="0.35" class="piece" style="--dx:-66px;--dy:198px;--rot:-122deg;--scale:1.087;--delay:0.489s;--dur:0.877s;" />
+    <polygon points="706,332 604,520 512,606" fill="#6aa6c8" opacity="0.35" class="piece" style="--dx:-300px;--dy:40px;--rot:-23deg;--scale:0.968;--delay:0.334s;--dur:1.226s;" />
+    <polygon points="318,332 706,332 512,606" fill="#8ebfd9" opacity="0.28" class="piece" style="--dx:252px;--dy:-160px;--rot:10deg;--scale:1.244;--delay:0.115s;--dur:1.056s;" />
+
+    
+    <polygon points="138,246 886,246 868,260 156,260" fill="#d8edf7" class="piece" style="--dx:53px;--dy:-320px;--rot:86deg;--scale:0.878;--delay:0.078s;--dur:1.039s;" />
+    <polygon points="156,260 868,260 828,280 196,280" fill="#9fcfe6" opacity="0.75" class="piece" style="--dx:-77px;--dy:202px;--rot:15deg;--scale:1.02;--delay:0.323s;--dur:1.233s;" />
+    <polygon points="196,280 828,280 748,300 276,300" fill="#e8f5fb" opacity="0.55" class="piece" style="--dx:-224px;--dy:102px;--rot:-98deg;--scale:1.011;--delay:0.559s;--dur:0.91s;" />
+
+    
+    <polygon points="214,316 810,316 688,500 512,578 336,500" fill="#d71d8f" class="piece" style="--dx:164px;--dy:-80px;--rot:-48deg;--scale:1.181;--delay:0.855s;--dur:1.276s;" />
+    <polygon points="214,316 336,500 430,518 320,342" fill="#ee69ce" class="piece" style="--dx:-178px;--dy:-318px;--rot:-102deg;--scale:1.247;--delay:0.867s;--dur:0.989s;" />
+    <polygon points="320,342 430,518 512,578 506,350" fill="#f037a9" class="piece" style="--dx:122px;--dy:326px;--rot:-119deg;--scale:0.823;--delay:0.415s;--dur:1.267s;" />
+    <polygon points="506,350 512,578 594,518 704,342" fill="#ce116f" class="piece" style="--dx:-212px;--dy:56px;--rot:-11deg;--scale:1.26;--delay:1.055s;--dur:0.895s;" />
+    <polygon points="704,342 594,518 688,500 810,316" fill="#a90d5f" class="piece" style="--dx:248px;--dy:16px;--rot:107deg;--scale:0.981;--delay:0.823s;--dur:0.88s;" />
+    <polygon points="320,342 506,350 430,518" fill="#ff84dc" class="piece" style="--dx:95px;--dy:-306px;--rot:-54deg;--scale:1.251;--delay:0.808s;--dur:1.335s;" />
+    <polygon points="506,350 704,342 594,518" fill="#e32694" class="piece" style="--dx:-27px;--dy:138px;--rot:-24deg;--scale:0.79;--delay:0.903s;--dur:1.17s;" />
+    <polygon points="430,518 512,578 594,518" fill="#b40966" class="piece" style="--dx:-225px;--dy:134px;--rot:-8deg;--scale:0.843;--delay:0.397s;--dur:0.881s;" />
+    <polygon points="214,316 810,316 724,344 300,344" fill="#ff9ee8" class="piece" style="--dx:174px;--dy:144px;--rot:-12deg;--scale:0.727;--delay:1.103s;--dur:1.019s;" />
+
+    
+    <polygon points="430,518 512,606 594,518 512,578" fill="#d4eef8" opacity="0.58" class="piece" style="--dx:-140px;--dy:-324px;--rot:-48deg;--scale:1.048;--delay:0.215s;--dur:1.283s;" />
+    <polygon points="430,518 512,606 476,646" fill="#79b3d2" opacity="0.56" class="piece" style="--dx:99px;--dy:208px;--rot:-37deg;--scale:0.757;--delay:0.37s;--dur:1.169s;" />
+    <polygon points="594,518 512,606 548,646" fill="#4f8db4" opacity="0.50" class="piece" style="--dx:-306px;--dy:-96px;--rot:24deg;--scale:1.029;--delay:0.442s;--dur:1.129s;" />
+
+    
+    <polygon points="476,646 548,646 530,842 494,842" fill="#8abdd8" opacity="0.62" class="piece" style="--dx:213px;--dy:111px;--rot:-94deg;--scale:0.914;--delay:1.061s;--dur:1.014s;" />
+    <polygon points="476,646 512,646 494,842 468,842" fill="#d2ebf7" opacity="0.56" class="piece" style="--dx:-123px;--dy:-191px;--rot:-55deg;--scale:1.111;--delay:0.969s;--dur:1.112s;" />
+    <polygon points="512,646 548,646 556,842 530,842" fill="#5d99bd" opacity="0.48" class="piece" style="--dx:-47px;--dy:334px;--rot:-92deg;--scale:0.803;--delay:0.698s;--dur:0.953s;" />
+    <polygon points="494,842 530,842 564,884 460,884" fill="#bfe0ef" opacity="0.62" class="piece" style="--dx:-289px;--dy:140px;--rot:51deg;--scale:0.706;--delay:0.936s;--dur:1.125s;" />
+
+    
+    <polygon points="344,884 680,884 746,936 278,936" fill="#8bbdd8" opacity="0.58" class="piece" style="--dx:253px;--dy:31px;--rot:-98deg;--scale:1.109;--delay:0.538s;--dur:1.039s;" />
+    <polygon points="344,884 512,884 454,936 278,936" fill="#d7edf7" opacity="0.62" class="piece" style="--dx:6px;--dy:-203px;--rot:102deg;--scale:1.124;--delay:1.197s;--dur:0.981s;" />
+    <polygon points="512,884 680,884 746,936 570,936" fill="#5f9dc1" opacity="0.50" class="piece" style="--dx:2px;--dy:167px;--rot:93deg;--scale:1.094;--delay:1.145s;--dur:1.43s;" />
+    <polygon points="454,936 512,884 570,936" fill="#b6dbea" opacity="0.72" class="piece" style="--dx:-267px;--dy:-16px;--rot:9deg;--scale:0.986;--delay:0.447s;--dur:1.43s;" />
+
+    
+    <polygon points="610,238 782,174 724,358" fill="#a9d51d" class="piece" style="--dx:151px;--dy:-125px;--rot:-24deg;--scale:1.033;--delay:0.983s;--dur:1.004s;" />
+    <polygon points="610,238 690,226 724,358" fill="#e4f08a" class="piece" style="--dx:159px;--dy:-182px;--rot:-97deg;--scale:0.829;--delay:1.139s;--dur:1.092s;" />
+    <polygon points="690,226 782,174 724,358" fill="#83b516" class="piece" style="--dx:-144px;--dy:219px;--rot:-58deg;--scale:1.057;--delay:0.594s;--dur:1.424s;" />
+    <polygon points="650,248 704,230 724,330" fill="#cfe65d" class="piece" style="--dx:-218px;--dy:96px;--rot:102deg;--scale:0.794;--delay:0.825s;--dur:1.23s;" />
+    <polygon points="610,238 636,208 782,174 760,206" fill="#64a813" class="piece" style="--dx:243px;--dy:83px;--rot:68deg;--scale:0.839;--delay:1.304s;--dur:1.271s;" />
+    <polygon points="724,358 760,206 782,174" fill="#548d13" class="piece" style="--dx:-140px;--dy:-262px;--rot:24deg;--scale:1.168;--delay:0.983s;--dur:0.907s;" />
+
+    
+    <polygon points="184,192 202,184 400,438 390,446" fill="#c88b22" class="piece" style="--dx:-37px;--dy:223px;--rot:124deg;--scale:0.799;--delay:0.867s;--dur:1.049s;" />
+    <polygon points="194,184 210,196 404,436 398,442" fill="#f0c66b" class="piece" style="--dx:-188px;--dy:153px;--rot:-123deg;--scale:0.738;--delay:1.332s;--dur:0.972s;" />
+    <polygon points="146,166 180,132 218,146 230,188 196,220 156,204" fill="#d09a32" class="piece" style="--dx:145px;--dy:-82px;--rot:16deg;--scale:0.966;--delay:0.961s;--dur:1.299s;" />
+    <polygon points="180,132 204,154 196,220 156,204" fill="#f5ce75" class="piece" style="--dx:80px;--dy:-326px;--rot:-7deg;--scale:0.983;--delay:0.727s;--dur:1.183s;" />
+    <polygon points="204,154 230,188 196,220" fill="#9f651c" class="piece" style="--dx:2px;--dy:205px;--rot:69deg;--scale:0.862;--delay:0.789s;--dur:0.901s;" />
+    <polygon points="146,166 180,132 204,154 172,174" fill="#f8dc93" class="piece" style="--dx:-195px;--dy:-62px;--rot:117deg;--scale:1.179;--delay:0.703s;--dur:1.064s;" />
+    <polygon points="146,166 172,174 156,204" fill="#b87720" class="piece" style="--dx:306px;--dy:-1px;--rot:91deg;--scale:1.276;--delay:0.973s;--dur:0.963s;" />
+
+    
+    <polygon points="216,286 254,248 310,258 340,302 320,354 262,370 216,342" fill="#a7d91e" class="piece" style="--dx:-104px;--dy:-309px;--rot:-21deg;--scale:1.084;--delay:1.08s;--dur:1.171s;" />
+    <polygon points="254,248 292,276 262,370 216,342" fill="#cff05c" class="piece" style="--dx:0px;--dy:150px;--rot:33deg;--scale:1.052;--delay:1.339s;--dur:1.064s;" />
+    <polygon points="292,276 340,302 320,354 262,370" fill="#7db30f" class="piece" style="--dx:-281px;--dy:52px;--rot:-21deg;--scale:1.077;--delay:1.361s;--dur:0.861s;" />
+    <polygon points="254,248 310,258 292,276" fill="#e6f691" class="piece" style="--dx:287px;--dy:-72px;--rot:3deg;--scale:0.725;--delay:1.33s;--dur:1.144s;" />
+
+    <polygon points="276,286 326,274 368,304 366,356 326,388 276,374 252,330" fill="#dd121f" class="piece" style="--dx:139px;--dy:-142px;--rot:30deg;--scale:1.231;--delay:1.441s;--dur:1.275s;" />
+    <polygon points="276,286 326,274 312,330 252,330" fill="#ff4e4b" class="piece" style="--dx:-110px;--dy:192px;--rot:-108deg;--scale:1.055;--delay:1.312s;--dur:0.859s;" />
+    <polygon points="326,274 368,304 312,330" fill="#c60b1c" class="piece" style="--dx:-141px;--dy:113px;--rot:13deg;--scale:1.047;--delay:0.803s;--dur:1.256s;" />
+    <polygon points="252,330 312,330 326,388 276,374" fill="#b4081a" class="piece" style="--dx:260px;--dy:116px;--rot:-20deg;--scale:0.75;--delay:1.476s;--dur:1.366s;" />
+    <polygon points="312,330 368,304 366,356 326,388" fill="#e52b32" class="piece" style="--dx:91px;--dy:-190px;--rot:-23deg;--scale:0.986;--delay:0.596s;--dur:1.336s;" />
+  </g>
+</svg>
