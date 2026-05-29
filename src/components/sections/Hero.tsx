@@ -48,7 +48,7 @@ export function Hero() {
               className="eyebrow mb-5 flex items-center gap-3"
             >
               <span className="block h-px w-12 bg-[var(--color-spark)]" />
-              <span>Mumbai · 2026 · A small site, kept personal</span>
+              <span>Mumbai · 2026 · A small site</span>
             </motion.div>
 
             {/* Name — letter-by-letter entrance */}
